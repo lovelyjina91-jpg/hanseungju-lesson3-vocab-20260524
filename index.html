@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 3 단어 시험 - 한승주 추가 프린트 3</title>
+<title>Lesson 3 단어 시험 (25문제) - 한승주 추가 프린트 3</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
@@ -20,17 +20,17 @@
   .section { margin-bottom: 30px; }
   .section-title { background: #1565c0; color: white; padding: 8px 16px; font-weight: 700; font-size: 16px; border-radius: 4px 4px 0 0; display: inline-block; }
   .section-desc { background: #e3f2fd; padding: 10px 16px; margin-bottom: 16px; font-size: 14px; border-radius: 0 4px 4px 4px; color: #0d47a1; }
-  .question { margin: 18px 0; padding: 16px 18px; background: #fafafa; border-left: 4px solid #1976d2; border-radius: 4px; transition: all 0.3s; }
+  .question { margin: 14px 0; padding: 14px 18px; background: #fafafa; border-left: 4px solid #1976d2; border-radius: 4px; transition: all 0.3s; }
   .q-num { font-weight: 700; color: #1565c0; margin-right: 6px; }
   .q-text { margin: 4px 0; }
   .hint { color: #777; font-size: 13px; font-style: italic; }
-  .def-box { background: #fff; border: 1.5px solid #cfd8dc; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-style: italic; color: #455a64; }
-  .word-box { background: #fff3e0; border: 1.5px dashed #fb8c00; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-weight: 700; font-size: 16px; color: #e65100; }
+  .def-box { background: #fff; border: 1.5px solid #cfd8dc; border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-style: italic; color: #455a64; font-size: 13px; }
+  .word-box { background: #fff3e0; border: 1.5px dashed #fb8c00; border-radius: 6px; padding: 8px 14px; margin: 8px 0; font-weight: 700; font-size: 16px; color: #e65100; display: inline-block; }
+  .word-bank { background: #e8f5e9; border: 1.5px dashed #66bb6a; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-weight: 500; color: #2e7d32; line-height: 1.8; }
   .choices { list-style: none; padding-left: 14px; margin: 8px 0 0; }
   .choices li { margin: 4px 0; }
   .choice-num { display: inline-block; width: 22px; height: 22px; border: 1px solid #555; border-radius: 50%; text-align: center; line-height: 20px; margin-right: 8px; font-size: 13px; }
-  .word-bank { background: #e8f5e9; border: 1.5px dashed #66bb6a; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-weight: 500; color: #2e7d32; }
-  .ans-input { margin-top: 12px; padding-top: 10px; border-top: 1px dashed #bbb; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .ans-input { margin-top: 10px; padding-top: 8px; border-top: 1px dashed #bbb; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .ans-input .ans-label { font-weight: 700; color: #1565c0; font-size: 14px; min-width: 60px; }
   .ans-input input[type="text"] { flex: 1; min-width: 180px; padding: 8px 12px; border: 1.5px solid #90caf9; border-radius: 5px; font-size: 14px; font-family: inherit; background: white; }
   .ans-input input[type="text"]:focus { outline: 2px solid #1976d2; border-color: #1976d2; }
@@ -65,7 +65,7 @@
   .answer-section { display: none; background: #f1f8e9; border: 2px solid #689f38; border-radius: 8px; padding: 24px 30px; margin-top: 20px; }
   .answer-section.show { display: block; }
   .answer-section h2 { color: #33691e; border-bottom: 2px solid #689f38; padding-bottom: 8px; margin-top: 0; }
-  .answer-item { margin: 10px 0; padding: 8px 12px; background: white; border-radius: 4px; }
+  .answer-item { margin: 8px 0; padding: 8px 12px; background: white; border-radius: 4px; }
   .answer-item strong { color: #1565c0; }
   .answer-item .explain { display: block; color: #555; font-size: 13px; margin-top: 4px; padding-left: 18px; }
   .question.graded-correct { border-left-color: #2e7d32; background: #f1f8e9; }
@@ -81,7 +81,7 @@
     <div class="header-top">
       <div class="title-block">
         <h1>Lesson 3 · Vocabulary Quiz</h1>
-        <div class="subtitle">Lesson 3 단어 시험 — 한승주 추가 프린트 ③</div>
+        <div class="subtitle">Lesson 3 단어 시험 (25개 단어 전체) — 한승주 추가 프린트 ③</div>
       </div>
       <div class="info-block">
         <div>2학년 <input type="text" id="studentClass" placeholder="반" style="width:50px;">반 <input type="text" id="studentNo" placeholder="번호" style="width:50px;">번</div>
@@ -91,121 +91,184 @@
   </div>
 
   <div class="instruction-banner">
-    📘 <strong>학습 포인트:</strong> Lesson 3 핵심 단어 25개 중 출제 · 우리말↔영어 변환 / 영영풀이 매칭 / 문맥 빈칸 채우기로 어휘력 점검
+    📘 <strong>학습 포인트:</strong> Lesson 3 핵심 단어 25개 전체 점검 · 우리말↔영어 변환 / 영영풀이 매칭 / 문맥 빈칸 채우기 · <strong>총 25문제, 각 4점</strong>
   </div>
 
+  <!-- Section A: 우리말 → 영어 (1-8) -->
   <div class="section">
-    <div class="section-title">A. 우리말 → 영어 단어 쓰기</div>
+    <div class="section-title">A. 우리말 뜻 → 영어 단어 쓰기 (1-8번)</div>
     <div class="section-desc">주어진 우리말 뜻에 해당하는 영어 단어를 쓰시오.</div>
 
     <div class="question" id="q1">
-      <div class="q-text"><span class="q-num">1.</span> ~덕분에</div>
+      <div class="q-text"><span class="q-num">1.</span> 꽤, 상당히</div>
       <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a1" placeholder="답을 입력하세요"></div>
     </div>
 
     <div class="question" id="q2">
-      <div class="q-text"><span class="q-num">2.</span> 의사소통</div>
+      <div class="q-text"><span class="q-num">2.</span> 경기, 시합 <span class="hint">(스포츠 한 판의 의미)</span></div>
       <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a2" placeholder="답을 입력하세요"></div>
     </div>
 
     <div class="question" id="q3">
-      <div class="q-text"><span class="q-num">3.</span> 가장 큰, 주된</div>
+      <div class="q-text"><span class="q-num">3.</span> ~덕분에</div>
       <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a3" placeholder="답을 입력하세요"></div>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">B. 영영풀이에 알맞은 단어 고르기</div>
-    <div class="section-desc">아래 영영풀이가 가리키는 단어를 ①~④ 중에서 고르시오.</div>
 
     <div class="question" id="q4">
-      <div class="q-text"><span class="q-num">4.</span> 다음 영영풀이가 가리키는 단어는?</div>
-      <div class="def-box">"an action in a sport that is against the rules"</div>
-      <ul class="choices">
-        <li><span class="choice-num">①</span> foul</li>
-        <li><span class="choice-num">②</span> match</li>
-        <li><span class="choice-num">③</span> spot</li>
-        <li><span class="choice-num">④</span> argue</li>
-      </ul>
-      <div class="ans-input"><span class="ans-label">✏️ 내 답:</span>
-        <select id="a4"><option value="">번호 선택</option><option value="1">①</option><option value="2">②</option><option value="3">③</option><option value="4">④</option></select>
-      </div>
+      <div class="q-text"><span class="q-num">4.</span> 결속시키다 / 하나가 되게 하다</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a4" placeholder="답을 입력하세요"></div>
     </div>
 
     <div class="question" id="q5">
-      <div class="q-text"><span class="q-num">5.</span> 다음 영영풀이가 가리키는 단어는?</div>
-      <div class="def-box">"a special kind of clothing that all the members of a group or organization wear"</div>
-      <ul class="choices">
-        <li><span class="choice-num">①</span> performance</li>
-        <li><span class="choice-num">②</span> uniform</li>
-        <li><span class="choice-num">③</span> competition</li>
-        <li><span class="choice-num">④</span> documentary</li>
-      </ul>
-      <div class="ans-input"><span class="ans-label">✏️ 내 답:</span>
-        <select id="a5"><option value="">번호 선택</option><option value="1">①</option><option value="2">②</option><option value="3">③</option><option value="4">④</option></select>
-      </div>
+      <div class="q-text"><span class="q-num">5.</span> 발견하다, 알아채다</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a5" placeholder="답을 입력하세요"></div>
     </div>
 
     <div class="question" id="q6">
-      <div class="q-text"><span class="q-num">6.</span> 다음 영영풀이가 가리키는 단어는?</div>
-      <div class="def-box">"more than two but not very many"</div>
-      <ul class="choices">
-        <li><span class="choice-num">①</span> main</li>
-        <li><span class="choice-num">②</span> several</li>
-        <li><span class="choice-num">③</span> secret</li>
-        <li><span class="choice-num">④</span> standard</li>
-      </ul>
-      <div class="ans-input"><span class="ans-label">✏️ 내 답:</span>
-        <select id="a6"><option value="">번호 선택</option><option value="1">①</option><option value="2">②</option><option value="3">③</option><option value="4">④</option></select>
-      </div>
+      <div class="q-text"><span class="q-num">6.</span> 의사소통</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a6" placeholder="답을 입력하세요"></div>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">C. 영어 → 우리말 뜻 쓰기</div>
-    <div class="section-desc">주어진 영단어의 우리말 뜻을 쓰시오.</div>
 
     <div class="question" id="q7">
-      <div class="q-text"><span class="q-num">7.</span> 다음 영단어의 뜻은?</div>
-      <div class="word-box">desire</div>
-      <div class="ans-input"><span class="ans-label">✏️ 우리말 뜻:</span><input type="text" id="a7" placeholder="답을 입력하세요"></div>
+      <div class="q-text"><span class="q-num">7.</span> 가장 큰, 주된</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a7" placeholder="답을 입력하세요"></div>
     </div>
 
     <div class="question" id="q8">
-      <div class="q-text"><span class="q-num">8.</span> 다음 영단어의 뜻은?</div>
-      <div class="word-box">stand out</div>
-      <div class="ans-input"><span class="ans-label">✏️ 우리말 뜻:</span><input type="text" id="a8" placeholder="답을 입력하세요"></div>
+      <div class="q-text"><span class="q-num">8.</span> 비밀</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a8" placeholder="답을 입력하세요"></div>
     </div>
   </div>
 
+  <!-- Section B: 영영풀이 → 단어 (9-15) -->
   <div class="section">
-    <div class="section-title">D. 문맥에 맞는 단어 골라 빈칸 채우기</div>
-    <div class="section-desc">&lt;보기&gt;에서 알맞은 단어를 골라 빈칸에 알맞은 형태로 쓰시오.</div>
-
-    <div class="word-bank">
-      <strong>&lt;보기&gt;</strong> &nbsp; unite &nbsp;|&nbsp; referee &nbsp;|&nbsp; spirit &nbsp;|&nbsp; argue &nbsp;|&nbsp; spot &nbsp;|&nbsp; competition
-    </div>
+    <div class="section-title">B. 영영풀이 → 영어 단어 쓰기 (9-15번)</div>
+    <div class="section-desc">아래 영영풀이가 가리키는 단어를 쓰시오.</div>
 
     <div class="question" id="q9">
-      <div class="q-text"><span class="q-num">9.</span> Our team should ____ together to win the match. <span class="hint">(하나가 되다, 단결하다)</span></div>
-      <div class="ans-input"><span class="ans-label">✏️ 단어:</span><input type="text" id="a9" placeholder="답을 입력하세요"></div>
+      <div class="q-text"><span class="q-num">9.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"more than two but not very many"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a9" placeholder="답을 입력하세요"></div>
     </div>
 
     <div class="question" id="q10">
-      <div class="q-text"><span class="q-num">10.</span> The ____ blew his whistle when one of the players made a foul. <span class="hint">(스포츠 경기 진행자)</span></div>
-      <div class="ans-input"><span class="ans-label">✏️ 단어:</span><input type="text" id="a10" placeholder="답을 입력하세요"></div>
+      <div class="q-text"><span class="q-num">10.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"an activity that a person or group does to entertain an audience"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a10" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q11">
+      <div class="q-text"><span class="q-num">11.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"to speak angrily to somebody because you disagree with them"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a11" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q12">
+      <div class="q-text"><span class="q-num">12.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"an action in a sport that is against the rules"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a12" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q13">
+      <div class="q-text"><span class="q-num">13.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"in a particular group"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a13" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q14">
+      <div class="q-text"><span class="q-num">14.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"a film or a television or radio program that gives detailed information about a particular subject"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a14" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q15">
+      <div class="q-text"><span class="q-num">15.</span> 다음 영영풀이가 가리키는 단어는?</div>
+      <div class="def-box">"a special kind of clothing that all the members of a group or organization wear"</div>
+      <div class="ans-input"><span class="ans-label">✏️ 영단어:</span><input type="text" id="a15" placeholder="답을 입력하세요"></div>
+    </div>
+  </div>
+
+  <!-- Section C: 영어 → 우리말 (16-21) -->
+  <div class="section">
+    <div class="section-title">C. 영어 단어 → 우리말 뜻 쓰기 (16-21번)</div>
+    <div class="section-desc">주어진 영단어의 우리말 뜻을 쓰시오.</div>
+
+    <div class="question" id="q16">
+      <div class="q-text"><span class="q-num">16.</span> 다음 단어의 우리말 뜻은?</div>
+      <div class="word-box">desire</div>
+      <div class="ans-input"><span class="ans-label">✏️ 우리말:</span><input type="text" id="a16" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q17">
+      <div class="q-text"><span class="q-num">17.</span> 다음 단어의 우리말 뜻은?</div>
+      <div class="word-box">stand out</div>
+      <div class="ans-input"><span class="ans-label">✏️ 우리말:</span><input type="text" id="a17" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q18">
+      <div class="q-text"><span class="q-num">18.</span> 다음 단어의 우리말 뜻은?</div>
+      <div class="word-box">hop</div>
+      <div class="ans-input"><span class="ans-label">✏️ 우리말:</span><input type="text" id="a18" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q19">
+      <div class="q-text"><span class="q-num">19.</span> 다음 단어의 우리말 뜻은?</div>
+      <div class="word-box">pull</div>
+      <div class="ans-input"><span class="ans-label">✏️ 우리말:</span><input type="text" id="a19" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q20">
+      <div class="q-text"><span class="q-num">20.</span> 다음 단어의 우리말 뜻은?</div>
+      <div class="word-box">since</div>
+      <div class="ans-input"><span class="ans-label">✏️ 우리말:</span><input type="text" id="a20" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q21">
+      <div class="q-text"><span class="q-num">21.</span> 다음 단어의 우리말 뜻은?</div>
+      <div class="word-box">standard</div>
+      <div class="ans-input"><span class="ans-label">✏️ 우리말:</span><input type="text" id="a21" placeholder="답을 입력하세요"></div>
+    </div>
+  </div>
+
+  <!-- Section D: 문장 빈칸 - 보기에서 (22-25) -->
+  <div class="section">
+    <div class="section-title">D. 문맥에 알맞은 단어 골라 빈칸 채우기 (22-25번)</div>
+    <div class="section-desc">&lt;보기&gt;에서 알맞은 단어를 골라 빈칸을 채우시오. (중복 사용 X)</div>
+
+    <div class="word-bank">
+      <strong>&lt;보기&gt;</strong> &nbsp; referee &nbsp;|&nbsp; message &nbsp;|&nbsp; competition &nbsp;|&nbsp; spirit
+    </div>
+
+    <div class="question" id="q22">
+      <div class="q-text"><span class="q-num">22.</span> The ____ blew his whistle when one of the players made a foul. <span class="hint">(심판)</span></div>
+      <div class="ans-input"><span class="ans-label">✏️ 단어:</span><input type="text" id="a22" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q23">
+      <div class="q-text"><span class="q-num">23.</span> She left a ____ for her teacher before leaving the classroom. <span class="hint">(메시지)</span></div>
+      <div class="ans-input"><span class="ans-label">✏️ 단어:</span><input type="text" id="a23" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q24">
+      <div class="q-text"><span class="q-num">24.</span> The Olympic ____ is held every four years. <span class="hint">(대회, 시합)</span></div>
+      <div class="ans-input"><span class="ans-label">✏️ 단어:</span><input type="text" id="a24" placeholder="답을 입력하세요"></div>
+    </div>
+
+    <div class="question" id="q25">
+      <div class="q-text"><span class="q-num">25.</span> Our team showed great fighting ____ until the very last minute. <span class="hint">(정신)</span></div>
+      <div class="ans-input"><span class="ans-label">✏️ 단어:</span><input type="text" id="a25" placeholder="답을 입력하세요"></div>
     </div>
   </div>
 
   <div class="submit-zone">
-    <div class="hint-text">모든 답을 작성했나요? 아래 버튼을 눌러 채점하고 결과를 선생님께 보내세요!</div>
+    <div class="hint-text">25문제 모두 작성했나요? 아래 버튼을 눌러 채점하고 결과를 선생님께 보내세요!</div>
     <button class="grade-btn" onclick="gradeAnswers()">📝 채점하기</button>
   </div>
 
   <div id="resultCard" class="result-card">
     <h2>📊 채점 결과</h2>
     <div class="score-display">
-      <span class="score" id="scoreNum">0</span><span class="total"> / 10</span>
+      <span class="score" id="scoreNum">0</span><span class="total"> / 25</span>
       <span class="label" id="scoreLabel">점</span>
     </div>
     <ul class="result-list" id="resultList"></ul>
@@ -219,127 +282,28 @@
 
   <div id="answers" class="answer-section">
     <h2>📝 정답 및 해설</h2>
-    <div class="answer-item"><strong>1.</strong> thanks to<span class="explain">→ "~덕분에" = thanks to (전치사구). 예: Thanks to your help, I passed.</span></div>
-    <div class="answer-item"><strong>2.</strong> communication<span class="explain">→ "의사소통" = communication. 동사형은 communicate.</span></div>
-    <div class="answer-item"><strong>3.</strong> main<span class="explain">→ "가장 큰, 주된" = main. 예: the main reason (주된 이유).</span></div>
-    <div class="answer-item"><strong>4.</strong> ① foul<span class="explain">→ "an action in a sport that is against the rules" = 반칙 (foul)</span></div>
-    <div class="answer-item"><strong>5.</strong> ② uniform<span class="explain">→ 그룹의 모든 멤버가 입는 특별한 옷 = 유니폼 (uniform)</span></div>
-    <div class="answer-item"><strong>6.</strong> ② several<span class="explain">→ "둘보다 많지만 매우 많지는 않은" = 몇몇의 (several)</span></div>
-    <div class="answer-item"><strong>7.</strong> 욕구, 바람<span class="explain">→ desire = 강한 희망/바람 (a strong hope or wish)</span></div>
-    <div class="answer-item"><strong>8.</strong> 눈에 띄다<span class="explain">→ stand out = 매우 쉽게 보이거나 알아챌 수 있는 (to be very easy to see or notice)</span></div>
-    <div class="answer-item"><strong>9.</strong> unite<span class="explain">→ "단결하다" = unite (to join together as a group). The team should unite to win.</span></div>
-    <div class="answer-item"><strong>10.</strong> referee<span class="explain">→ "심판" = referee (스포츠 경기에서 규칙 준수를 감독하는 사람)</span></div>
-  </div>
-
-  <div class="footer-note">
-    문제 출제: Lesson 3 단어 시험 · 총 10문항 · 한승주 학생 추가 학습 자료 ③<br>
-    🖨️ 인쇄 시 정답은 마지막 페이지에 자동 포함됩니다.
-  </div>
-</div>
-
-<div id="toast" class="toast"></div>
-
-<script>
-  const answerKey = {
-    1: { accept: ["thanks to"], display: "thanks to" },
-    2: { accept: ["communication"], display: "communication" },
-    3: { accept: ["main"], display: "main" },
-    4: { accept: ["1"], display: "① foul" },
-    5: { accept: ["2"], display: "② uniform" },
-    6: { accept: ["2"], display: "② several" },
-    7: { accept: ["욕구", "바람", "욕구 바람", "욕구, 바람", "바람 욕구", "강한 바람", "강한 욕구", "강한 희망", "희망", "소망"], display: "욕구, 바람" },
-    8: { accept: ["눈에 띄다", "눈에 띄어다", "눈에띄다", "두드러지다"], display: "눈에 띄다" },
-    9: { accept: ["unite"], display: "unite" },
-    10: { accept: ["referee"], display: "referee" }
-  };
-  let lastResult = null;
-  function normalize(s) { return (s||"").trim().toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," "); }
-  function checkAnswer(qn, ua) { if (!ua || !ua.toString().trim()) return false; const n = normalize(ua); return answerKey[qn].accept.some(a => normalize(a) === n); }
-
-  function gradeAnswers() {
-    const name = document.getElementById("studentName").value.trim() || "(이름 미입력)";
-    const cls = document.getElementById("studentClass").value.trim();
-    const no = document.getElementById("studentNo").value.trim();
-    let score = 0;
-    const results = [];
-    for (let i = 1; i <= 10; i++) {
-      const qEl = document.getElementById("q" + i);
-      qEl.classList.remove("graded-correct", "graded-wrong");
-      const oldMark = qEl.querySelector(".grade-mark");
-      if (oldMark) oldMark.remove();
-    }
-    for (let i = 1; i <= 10; i++) {
-      const ua = document.getElementById("a" + i).value;
-      const ok = checkAnswer(i, ua);
-      if (ok) score++;
-      results.push({qn: i, user: ua || "(미입력)", correct: ok, answer: answerKey[i].display});
-      const qEl = document.getElementById("q" + i);
-      qEl.classList.add(ok ? "graded-correct" : "graded-wrong");
-      const lbl = qEl.querySelector(".ans-input .ans-label");
-      const m = document.createElement("span");
-      m.className = "grade-mark";
-      m.textContent = ok ? "⭕" : "❌";
-      lbl.appendChild(m);
-    }
-    document.getElementById("scoreNum").textContent = score;
-    let lbl = "점";
-    if (score === 10) lbl = "🎉 만점! 완벽해요!";
-    else if (score >= 8) lbl = "👍 잘했어요!";
-    else if (score >= 6) lbl = "💪 조금만 더 분발!";
-    else lbl = "📚 다시 복습해봐요!";
-    document.getElementById("scoreLabel").textContent = lbl;
-    const listEl = document.getElementById("resultList");
-    listEl.innerHTML = "";
-    results.forEach(r => {
-      const li = document.createElement("li");
-      li.className = r.correct ? "correct" : "wrong";
-      li.innerHTML = '<span class="qn">' + r.qn + '번</span><span class="mark">' + (r.correct ? "⭕" : "❌") + '</span><span class="your-ans">내 답: ' + r.user + (!r.correct ? '<br><small style="color:#c62828">정답: ' + r.answer + '</small>' : '') + '</span>';
-      listEl.appendChild(li);
-    });
-    const now = new Date();
-    const ds = now.getFullYear()+"."+String(now.getMonth()+1).padStart(2,"0")+"."+String(now.getDate()).padStart(2,"0")+" "+String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
-    const wl = results.filter(r => !r.correct).map(r => r.qn + "번").join(", ") || "없음";
-    lastResult = "📚 [Lesson 3 단어 시험 결과]\n\n👤 학생: " + name + (cls ? " (" + cls + "반 " + no + "번)" : "") + "\n📅 응시: " + ds + "\n📖 단원: Lesson 3 단어 (10문제)\n\n🎯 점수: " + score + " / 10점 (" + (score*10) + "점)\n❌ 틀린 문제: " + wl + "\n\n— 상세 답안 —\n" + results.map(r => r.qn + ". " + (r.correct ? "⭕" : "❌") + " 내답: " + r.user + (!r.correct ? " | 정답: " + r.answer : "")).join("\n") + "\n\n선생님, 채점 확인 부탁드려요! 🙇";
-    const rc = document.getElementById("resultCard");
-    rc.classList.add("show");
-    rc.scrollIntoView({behavior: "smooth", block: "start"});
-  }
-
-  async function sendToKakao() {
-    if (!lastResult) { showToast("먼저 채점하기를 눌러주세요!"); return; }
-    if (navigator.share) {
-      try {
-        await navigator.share({title: "Lesson 3 단어 시험 결과", text: lastResult});
-        showToast("✅ 공유 완료!");
-        return;
-      } catch (err) { if (err.name === "AbortError") return; }
-    }
-    try {
-      await navigator.clipboard.writeText(lastResult);
-      showToast("📋 결과가 복사되었습니다! 카톡에 붙여넣기 해주세요.");
-      setTimeout(() => {
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        if (isMobile) window.location.href = "kakaotalk://";
-        else window.open("https://accounts.kakao.com/login", "_blank");
-      }, 1500);
-    } catch (err) {
-      const ta = document.createElement("textarea");
-      ta.value = lastResult;
-      ta.style.position = "fixed"; ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); showToast("📋 결과가 복사되었습니다!"); }
-      catch (e) { showToast("❌ 복사 실패."); }
-      document.body.removeChild(ta);
-    }
-  }
-
-  function showToast(msg) {
-    const t = document.getElementById("toast");
-    t.textContent = msg;
-    t.classList.add("show");
-    setTimeout(() => t.classList.remove("show"), 3000);
-  }
-</script>
-</body>
-</html>
+    <div class="answer-item"><strong>1.</strong> quite <span class="explain">→ 꽤, 상당히 (very, but not extremely)</span></div>
+    <div class="answer-item"><strong>2.</strong> match <span class="explain">→ 경기, 시합 (a sports event where teams compete against each other)</span></div>
+    <div class="answer-item"><strong>3.</strong> thanks to <span class="explain">→ ~덕분에 (because of someone or something)</span></div>
+    <div class="answer-item"><strong>4.</strong> unite <span class="explain">→ 결속시키다 (to join together as a group)</span></div>
+    <div class="answer-item"><strong>5.</strong> spot <span class="explain">→ 발견하다, 알아채다 (to see or notice someone or something)</span></div>
+    <div class="answer-item"><strong>6.</strong> communication <span class="explain">→ 의사소통 (the process by which people exchange information)</span></div>
+    <div class="answer-item"><strong>7.</strong> main <span class="explain">→ 가장 큰, 주된 (being the largest or most important of its kind)</span></div>
+    <div class="answer-item"><strong>8.</strong> secret <span class="explain">→ 비밀 (something that is kept hidden)</span></div>
+    <div class="answer-item"><strong>9.</strong> several <span class="explain">→ 몇몇의</span></div>
+    <div class="answer-item"><strong>10.</strong> performance <span class="explain">→ 공연</span></div>
+    <div class="answer-item"><strong>11.</strong> argue <span class="explain">→ 언쟁하다, 다투다</span></div>
+    <div class="answer-item"><strong>12.</strong> foul <span class="explain">→ 반칙</span></div>
+    <div class="answer-item"><strong>13.</strong> among <span class="explain">→ ~중에, ~사이에</span></div>
+    <div class="answer-item"><strong>14.</strong> documentary <span class="explain">→ 다큐멘터리</span></div>
+    <div class="answer-item"><strong>15.</strong> uniform <span class="explain">→ 유니폼, 제복</span></div>
+    <div class="answer-item"><strong>16.</strong> 욕구, 바람 <span class="explain">→ desire = a strong hope or wish</span></div>
+    <div class="answer-item"><strong>17.</strong> 눈에 띄다 <span class="explain">→ stand out = to be very easy to see or notice</span></div>
+    <div class="answer-item"><strong>18.</strong> 깡충깡충 뛰다 <span class="explain">→ hop = to move by jumping on one foot</span></div>
+    <div class="answer-item"><strong>19.</strong> 끌다, 당기다 <span class="explain">→ pull = to move something towards yourself</span></div>
+    <div class="answer-item"><strong>20.</strong> ~부터 <span class="explain">→ since = from a time in the past until a later time or until now</span></div>
+    <div class="answer-item"><strong>21.</strong> 일반적인, 표준의 <span class="explain">→ standard = accepted as normal or usual</span></div>
+    <div class="answer-item"><strong>22.</strong> referee <span class="explain">→ 심판 (스포츠 경기 규칙 감독)</span></div>
+    <div class="answer-item"><strong>23.</strong> message <span class="explain">→ 메시지 (보내거나 남기는 정보)</span></div>
+    <div class="answer-item"><strong>24.</strong> competition <span class="explain">→ 대회, 시합 (Olympic Games)</span></div>
+    <div class="answer-i
